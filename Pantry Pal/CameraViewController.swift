@@ -39,6 +39,8 @@ class CameraViewController: UIViewController {
         self.view.layer.addSublayer(previewLayer)
         previewLayer?.frame = self.view.layer.frame
         captureSession.startRunning()
+        
+        //DOES THIS WORK
     }
     
 }
