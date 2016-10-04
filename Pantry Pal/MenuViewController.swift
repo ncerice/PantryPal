@@ -13,7 +13,7 @@ class MenuViewController: UIViewController {
     
     func setupNavigationBar() {
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Futura", size: 20)!]
-        self.navigationItem.title = "Grocery Mate"
+        self.navigationItem.title = "Pantry Pal"
     }
 
 
