@@ -9,11 +9,10 @@ class CameraViewController: UIViewController {
     }
     
     func swiftOCRTest() {
-        let sampleImage = OCRImage(named: "SampleReceipt")
+        let sampleImage = OCRImage(named: "SampleReceipt2")
         let swiftOCRInstance = SwiftOCR()
         swiftOCRInstance.recognize(sampleImage!) {recognizedString in
             print(recognizedString)
-            print(swiftOCRInstance.currentOCRRecognizedBlobs)
-        }        
+        }
     }
 }
