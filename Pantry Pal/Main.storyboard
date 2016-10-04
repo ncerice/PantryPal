@@ -61,7 +61,7 @@
         <!--Camera View Controller-->
         <scene sceneID="KcI-65-7pn">
             <objects>
-                <viewController id="pjg-KN-9Vg" customClass="CameraViewController" sceneMemberID="viewController">
+                <viewController id="pjg-KN-9Vg" customClass="CameraViewController" customModule="Pantry_Pal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bk5-XP-tFV"/>
                         <viewControllerLayoutGuide type="bottom" id="2SZ-Np-M9i"/>
