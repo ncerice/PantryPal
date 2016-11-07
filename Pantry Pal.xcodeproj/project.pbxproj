@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D833D1BC1DCFF6B400AD814B /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D833D1BB1DCFF66900AD814B /* GPUImage.framework */; };
+		D833D1BD1DCFF6B400AD814B /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D833D1BB1DCFF66900AD814B /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D833D1C01DCFF6B400AD814B /* SwiftOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D833D1AB1DCFF64B00AD814B /* SwiftOCR.framework */; };
+		D833D1C11DCFF6B400AD814B /* SwiftOCR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D833D1AB1DCFF64B00AD814B /* SwiftOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8589F831DCE8840005AD18B /* IPDFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8589F821DCE8840005AD18B /* IPDFCameraViewController.m */; };
 		D8AFB4371DCE8E30000F84CE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AFB4361DCE8E30000F84CE /* CameraViewController.swift */; };
 		D8FF9B611DA3FA0400663BA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF9B601DA3FA0400663BA6 /* AppDelegate.swift */; };
@@ -16,7 +20,83 @@
 		D8FF9B761DA3FA4800663BA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8FF9B731DA3FA4800663BA6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D833D1AA1DCFF64B00AD814B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D833D1A11DCFF64A00AD814B /* SwiftOCR.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 373ED0AF1CC9071C00C4758B;
+			remoteInfo = SwiftOCR;
+		};
+		D833D1AC1DCFF64B00AD814B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D833D1A11DCFF64A00AD814B /* SwiftOCR.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 373ED0B91CC9071D00C4758B;
+			remoteInfo = SwiftOCRTests;
+		};
+		D833D1AE1DCFF64B00AD814B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D833D1A11DCFF64A00AD814B /* SwiftOCR.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 373ED0E61CC909A500C4758B;
+			remoteInfo = "SwiftOCR Mac";
+		};
+		D833D1B01DCFF64B00AD814B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D833D1A11DCFF64A00AD814B /* SwiftOCR.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 373ED0EF1CC909A500C4758B;
+			remoteInfo = "SwiftOCR MacTests";
+		};
+		D833D1B81DCFF66900AD814B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D833D1B21DCFF66900AD814B /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		D833D1BA1DCFF66900AD814B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D833D1B21DCFF66900AD814B /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		D833D1BE1DCFF6B400AD814B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D833D1B21DCFF66900AD814B /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCE209E41943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		D833D1C21DCFF6B400AD814B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D833D1A11DCFF64A00AD814B /* SwiftOCR.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 373ED0AE1CC9071C00C4758B;
+			remoteInfo = SwiftOCR;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D833D1C41DCFF6B400AD814B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D833D1BD1DCFF6B400AD814B /* GPUImage.framework in Embed Frameworks */,
+				D833D1C11DCFF6B400AD814B /* SwiftOCR.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D833D1A11DCFF64A00AD814B /* SwiftOCR.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftOCR.xcodeproj; path = framework/SwiftOCR.xcodeproj; sourceTree = "<group>"; };
+		D833D1B21DCFF66900AD814B /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "framework/SwiftOCR/GPUImage-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		D8589F801DCE883F005AD18B /* Pantry Pal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pantry Pal-Bridging-Header.h"; sourceTree = "<group>"; };
 		D8589F811DCE8840005AD18B /* IPDFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPDFCameraViewController.h; sourceTree = "<group>"; };
 		D8589F821DCE8840005AD18B /* IPDFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPDFCameraViewController.m; sourceTree = "<group>"; };
@@ -35,12 +115,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D833D1BC1DCFF6B400AD814B /* GPUImage.framework in Frameworks */,
+				D833D1C01DCFF6B400AD814B /* SwiftOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D833D1A21DCFF64A00AD814B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D833D1AB1DCFF64B00AD814B /* SwiftOCR.framework */,
+				D833D1AD1DCFF64B00AD814B /* SwiftOCRTests.xctest */,
+				D833D1AF1DCFF64B00AD814B /* SwiftOCR.framework */,
+				D833D1B11DCFF64B00AD814B /* SwiftOCR MacTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D833D1B31DCFF66900AD814B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D833D1B91DCFF66900AD814B /* libGPUImage.a */,
+				D833D1BB1DCFF66900AD814B /* GPUImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D8FF9B541DA3FA0400663BA6 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +168,8 @@
 				D8FF9B731DA3FA4800663BA6 /* Main.storyboard */,
 				D8FF9B671DA3FA0400663BA6 /* Assets.xcassets */,
 				D8FF9B691DA3FA0400663BA6 /* LaunchScreen.storyboard */,
+				D833D1B21DCFF66900AD814B /* GPUImage.xcodeproj */,
+				D833D1A11DCFF64A00AD814B /* SwiftOCR.xcodeproj */,
 				D8FF9B6C1DA3FA0400663BA6 /* Info.plist */,
 				D8589F811DCE8840005AD18B /* IPDFCameraViewController.h */,
 				D8589F821DCE8840005AD18B /* IPDFCameraViewController.m */,
@@ -84,10 +188,13 @@
 				D8FF9B591DA3FA0400663BA6 /* Sources */,
 				D8FF9B5A1DA3FA0400663BA6 /* Frameworks */,
 				D8FF9B5B1DA3FA0400663BA6 /* Resources */,
+				D833D1C41DCFF6B400AD814B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D833D1BF1DCFF6B400AD814B /* PBXTargetDependency */,
+				D833D1C31DCFF6B400AD814B /* PBXTargetDependency */,
 			);
 			name = "Pantry Pal";
 			productName = "Pantry Pal";
@@ -123,12 +230,67 @@
 			mainGroup = D8FF9B541DA3FA0400663BA6;
 			productRefGroup = D8FF9B5E1DA3FA0400663BA6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D833D1B31DCFF66900AD814B /* Products */;
+					ProjectRef = D833D1B21DCFF66900AD814B /* GPUImage.xcodeproj */;
+				},
+				{
+					ProductGroup = D833D1A21DCFF64A00AD814B /* Products */;
+					ProjectRef = D833D1A11DCFF64A00AD814B /* SwiftOCR.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D8FF9B5C1DA3FA0400663BA6 /* Pantry Pal */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D833D1AB1DCFF64B00AD814B /* SwiftOCR.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftOCR.framework;
+			remoteRef = D833D1AA1DCFF64B00AD814B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D833D1AD1DCFF64B00AD814B /* SwiftOCRTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftOCRTests.xctest;
+			remoteRef = D833D1AC1DCFF64B00AD814B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D833D1AF1DCFF64B00AD814B /* SwiftOCR.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftOCR.framework;
+			remoteRef = D833D1AE1DCFF64B00AD814B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D833D1B11DCFF64B00AD814B /* SwiftOCR MacTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftOCR MacTests.xctest";
+			remoteRef = D833D1B01DCFF64B00AD814B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D833D1B91DCFF66900AD814B /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = D833D1B81DCFF66900AD814B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D833D1BB1DCFF66900AD814B /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = D833D1BA1DCFF66900AD814B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D8FF9B5B1DA3FA0400663BA6 /* Resources */ = {
@@ -156,6 +318,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D833D1BF1DCFF6B400AD814B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImageFramework;
+			targetProxy = D833D1BE1DCFF6B400AD814B /* PBXContainerItemProxy */;
+		};
+		D833D1C31DCFF6B400AD814B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftOCR;
+			targetProxy = D833D1C21DCFF6B400AD814B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D8FF9B691DA3FA0400663BA6 /* LaunchScreen.storyboard */ = {
@@ -264,6 +439,7 @@
 		D8FF9B701DA3FA0400663BA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -282,6 +458,7 @@
 		D8FF9B711DA3FA0400663BA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

@@ -159,7 +159,7 @@ public class SwiftOCR {
             
             #if os(iOS)
                 let cgImage        = image.CGImage
-                let croppedCGImage = CGImageCreateWithImageInRect(cgImage, rect)!
+                let croppedCGImage = CGImageCreateWithImageInRect(cgImage!, rect)!
                 let croppedImage   = OCRImage(CGImage: croppedCGImage)
             #else
                 let cgImage        = image.CGImageForProposedRect(nil, context: nil, hints: nil)
@@ -185,7 +185,7 @@ public class SwiftOCR {
     internal func extractBlobs(image: OCRImage) -> [(OCRImage, CGRect)] {
 
         #if os(iOS)
-            let pixelData = CGDataProviderCopyData(CGImageGetDataProvider(image.CGImage))
+            let pixelData = CGDataProviderCopyData(CGImageGetDataProvider(image.CGImage!)!)
             let bitmapData: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
             let cgImage   = image.CGImage
         #else
@@ -196,9 +196,9 @@ public class SwiftOCR {
         
         //data <- bitmapData
         
-        let numberOfComponents = CGImageGetBitsPerPixel(cgImage) / CGImageGetBitsPerComponent(cgImage)
-        let bytesPerRow        = CGImageGetBytesPerRow(cgImage)
-        let imageHeight        = CGImageGetHeight(cgImage)
+        let numberOfComponents = CGImageGetBitsPerPixel(cgImage!) / CGImageGetBitsPerComponent(cgImage!)
+        let bytesPerRow        = CGImageGetBytesPerRow(cgImage!)
+        let imageHeight        = CGImageGetHeight(cgImage!)
         let imageWidth         = bytesPerRow / numberOfComponents
         
         var data = [[UInt16]](count: Int(imageHeight), repeatedValue: [UInt16](count: Int(imageWidth), repeatedValue: 0))
@@ -436,7 +436,7 @@ public class SwiftOCR {
         
         for rect in mergeLabelRects {
             
-            if let croppedCGImage = CGImageCreateWithImageInRect(cgImage, rect) {
+            if let croppedCGImage = CGImageCreateWithImageInRect(cgImage!, rect) {
                 
                 #if os(iOS)
                     let croppedImage = UIImage(CGImage: croppedCGImage)
@@ -486,11 +486,11 @@ public class SwiftOCR {
             
             let context = CGBitmapContextCreate(nil, Int(width), Int(height), bitsPerComponent, bytesPerRow, colorSpace, bitmapInfo)
             
-            CGContextSetInterpolationQuality(context, CGInterpolationQuality.None)
+            CGContextSetInterpolationQuality(context!, CGInterpolationQuality.None)
             
-            CGContextDrawImage(context, CGRectMake(0, 0, cropSize.width, cropSize.height), cgImage)
+            CGContextDrawImage(context!, CGRectMake(0, 0, cropSize.width, cropSize.height), cgImage!)
             
-            let resizedCGImage = CGImageCreateWithImageInRect(CGBitmapContextCreateImage(context), CGRectMake(0, 0, cropSize.width, cropSize.height))!
+            let resizedCGImage = CGImageCreateWithImageInRect(CGBitmapContextCreateImage(context!)!, CGRectMake(0, 0, cropSize.width, cropSize.height))!
             
             #if os(iOS)
                 let resizedOCRImage = UIImage(CGImage: resizedCGImage)
@@ -632,7 +632,7 @@ public class SwiftOCR {
         }()
         
         #if os(iOS)
-            let pixelData  = CGDataProviderCopyData(CGImageGetDataProvider(resizedBlob.CGImage))
+            let pixelData  = CGDataProviderCopyData(CGImageGetDataProvider(resizedBlob.CGImage!)!)
             let bitmapData: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
             let cgImage    = resizedBlob.CGImage
         #else
@@ -641,7 +641,7 @@ public class SwiftOCR {
             let cgImage    = bitmapRep.CGImage
         #endif
         
-        let numberOfComponents = CGImageGetBitsPerPixel(cgImage) / CGImageGetBitsPerComponent(cgImage)
+        let numberOfComponents = CGImageGetBitsPerPixel(cgImage!) / CGImageGetBitsPerComponent(cgImage!)
         
         var imageData = [Float]()
         
