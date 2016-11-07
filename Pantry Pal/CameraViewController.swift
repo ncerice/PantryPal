@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftOCR
 
 class CameraViewController: UIViewController {
     
@@ -20,6 +21,8 @@ class CameraViewController: UIViewController {
     
     
     private var isFlashEnabled = false
+    private let swiftOCRInstance = SwiftOCR()
+    
     @IBAction func captureButtonPressed(sender: AnyObject) {
         cameraViewController.captureImageWithCompletionHander { (imageFilePath) in
             let captureImageView = UIImageView(image: UIImage(contentsOfFile: imageFilePath))
@@ -30,6 +33,10 @@ class CameraViewController: UIViewController {
             captureImageView.userInteractionEnabled = true
             self.view.addSubview(captureImageView)
             captureImageView.frame = self.view.bounds
+            self.swiftOCRInstance.recognize(OCRImage(contentsOfFile: imageFilePath)!) {recognizedString in
+                print(recognizedString)
+            }
+            print(self.swiftOCRInstance.currentOCRRecognizedBlobs)
         }
     }
     @IBAction func flashTogglePressed(sender: AnyObject) {
@@ -77,6 +84,8 @@ class CameraViewController: UIViewController {
         cameraViewController.setupCameraView()
         cameraViewController.enableBorderDetection = true
         cameraViewController.cameraViewType = IPDFCameraViewType.Normal
+        swiftOCRInstance.characterBlackList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+        swiftOCRInstance.characterWhiteList = "0123456789"
         updateTitleLabel()
     
     }

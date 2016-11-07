@@ -126,7 +126,7 @@ public class SwiftOCRTraining {
                 let customImage = UIGraphicsGetImageFromCurrentImageContext()
                 UIGraphicsEndImageContext()
                 
-                return customImage
+                return customImage!
             }
         #else
             let customImage: (String) -> OCRImage = { code in
