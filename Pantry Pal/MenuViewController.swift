@@ -14,6 +14,7 @@ class MenuViewController: UIViewController {
     func setupNavigationBar() {
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Futura", size: 20)!]
         self.navigationItem.title = "Pantry Pal"
+        self.navigationController!.navigationBar.tintColor = UIColor.blackColor()
     }
 
 
