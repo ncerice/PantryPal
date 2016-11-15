@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D833D1BC1DCFF6B400AD814B /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D833D1BB1DCFF66900AD814B /* GPUImage.framework */; };
 		D833D1BD1DCFF6B400AD814B /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D833D1BB1DCFF66900AD814B /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D83E862B1DDB8745004672A6 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E862A1DDB8745004672A6 /* PantryViewController.swift */; };
 		D8589F831DCE8840005AD18B /* IPDFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8589F821DCE8840005AD18B /* IPDFCameraViewController.m */; };
 		D8AFB4371DCE8E30000F84CE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AFB4361DCE8E30000F84CE /* CameraViewController.swift */; };
 		D8FF9B611DA3FA0400663BA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF9B601DA3FA0400663BA6 /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		D833D1B21DCFF66900AD814B /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "framework/SwiftOCR/GPUImage-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
+		D83E862A1DDB8745004672A6 /* PantryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
 		D8589F801DCE883F005AD18B /* Pantry Pal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pantry Pal-Bridging-Header.h"; sourceTree = "<group>"; };
 		D8589F811DCE8840005AD18B /* IPDFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPDFCameraViewController.h; sourceTree = "<group>"; };
 		D8589F821DCE8840005AD18B /* IPDFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPDFCameraViewController.m; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				D8AFB4361DCE8E30000F84CE /* CameraViewController.swift */,
+				D83E862A1DDB8745004672A6 /* PantryViewController.swift */,
 				D8FF9B601DA3FA0400663BA6 /* AppDelegate.swift */,
 				D8FF9B721DA3FA4800663BA6 /* MenuViewController.swift */,
 				D8FF9B731DA3FA4800663BA6 /* Main.storyboard */,
@@ -229,6 +232,7 @@
 				D8FF9B611DA3FA0400663BA6 /* AppDelegate.swift in Sources */,
 				D8FF9B751DA3FA4800663BA6 /* MenuViewController.swift in Sources */,
 				D8AFB4371DCE8E30000F84CE /* CameraViewController.swift in Sources */,
+				D83E862B1DDB8745004672A6 /* PantryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
