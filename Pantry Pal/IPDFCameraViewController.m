@@ -253,7 +253,7 @@
 
 - (CIImage *)drawHighlightOverlayForPoints:(CIImage *)image topLeft:(CGPoint)topLeft topRight:(CGPoint)topRight bottomLeft:(CGPoint)bottomLeft bottomRight:(CGPoint)bottomRight
 {
-    CIImage *overlay = [CIImage imageWithColor:[CIColor colorWithRed:(48/255) green:(205/255) blue:(154/255) alpha:1.0]];
+    CIImage *overlay = [CIImage imageWithColor:[CIColor colorWithRed:0.188235 green:0.803921 blue:0.603921 alpha:0.6]];
     overlay = [overlay imageByCroppingToRect:image.extent];
     overlay = [overlay imageByApplyingFilter:@"CIPerspectiveTransformWithExtent" withInputParameters:@{@"inputExtent":[CIVector vectorWithCGRect:image.extent],@"inputTopLeft":[CIVector vectorWithCGPoint:topLeft],@"inputTopRight":[CIVector vectorWithCGPoint:topRight],@"inputBottomLeft":[CIVector vectorWithCGPoint:bottomLeft],@"inputBottomRight":[CIVector vectorWithCGPoint:bottomRight]}];
     
