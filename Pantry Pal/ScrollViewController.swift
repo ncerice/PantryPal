@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ScrollViewController: UIViewController {
+class ScrollViewController: UIViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var pageOverlay: UIView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -24,6 +25,12 @@ class ScrollViewController: UIViewController {
         
         initViews();
         // Do any additional setup after loading the view.
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        var rect = pageOverlay.frame
+        rect.origin.x = scrollView.contentOffset.x/2
+        pageOverlay.frame = rect
     }
     
     func initViews() {

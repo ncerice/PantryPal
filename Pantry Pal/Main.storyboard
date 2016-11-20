@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tdJ-A0-rr0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tdJ-A0-rr0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -140,17 +141,31 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nps-u2-Non">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tdJ-A0-rr0" id="kIe-cZ-Sii"/>
+                                </connections>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOY-ae-WoL" userLabel="Overlay">
+                                <rect key="frame" x="0.0" y="662" width="187.5" height="5"/>
+                                <color key="backgroundColor" red="0.18823529410000001" green="0.80392156859999997" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="JXe-Yt-aag"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="59c-SR-xFl" firstAttribute="top" secondItem="MOY-ae-WoL" secondAttribute="bottom" id="5RU-SK-fRQ"/>
+                            <constraint firstItem="MOY-ae-WoL" firstAttribute="leading" secondItem="Cdc-Je-jaU" secondAttribute="leading" id="Cfi-Fa-2uO"/>
                             <constraint firstItem="nps-u2-Non" firstAttribute="top" secondItem="Cdc-Je-jaU" secondAttribute="top" id="H2m-W4-vr6"/>
                             <constraint firstAttribute="trailing" secondItem="nps-u2-Non" secondAttribute="trailing" id="Xbi-xa-0uI"/>
+                            <constraint firstItem="MOY-ae-WoL" firstAttribute="width" secondItem="Cdc-Je-jaU" secondAttribute="width" multiplier="0.5" id="YEP-k7-w0Q"/>
                             <constraint firstItem="nps-u2-Non" firstAttribute="bottom" secondItem="59c-SR-xFl" secondAttribute="top" id="bZS-1P-8yL"/>
                             <constraint firstItem="nps-u2-Non" firstAttribute="leading" secondItem="Cdc-Je-jaU" secondAttribute="leading" id="zRM-8X-V0p"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pageOverlay" destination="MOY-ae-WoL" id="r4P-zH-RFS"/>
                         <outlet property="scrollView" destination="nps-u2-Non" id="6bl-rT-4WT"/>
                     </connections>
                 </viewController>
@@ -175,14 +190,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="46" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tWi-Dq-HEc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Item" id="GD5-wW-JIY">
                                         <rect key="frame" x="0.0" y="46" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GD5-wW-JIY" id="xuC-38-9Nr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGF-Tg-XFc">
@@ -221,7 +236,7 @@
                             <constraint firstAttribute="trailing" secondItem="tWi-Dq-HEc" secondAttribute="trailing" id="ILg-c2-3aY"/>
                             <constraint firstItem="tWi-Dq-HEc" firstAttribute="top" secondItem="dD4-JO-BcI" secondAttribute="bottom" id="RMd-rl-BmI"/>
                             <constraint firstItem="dD4-JO-BcI" firstAttribute="leading" secondItem="B1g-Mo-1Sp" secondAttribute="leading" id="Tey-g1-GTz"/>
-                            <constraint firstAttribute="bottom" secondItem="tWi-Dq-HEc" secondAttribute="bottom" id="cco-nI-44y"/>
+                            <constraint firstItem="tWi-Dq-HEc" firstAttribute="bottom" secondItem="B1g-Mo-1Sp" secondAttribute="bottom" constant="-5" id="cco-nI-44y"/>
                             <constraint firstItem="dD4-JO-BcI" firstAttribute="top" secondItem="yIM-tz-EhU" secondAttribute="bottom" id="xTy-eU-YxN"/>
                         </constraints>
                     </view>
