@@ -9,7 +9,7 @@
 import UIKit
 
 class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -18,7 +18,7 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,5 +39,9 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Store name - Date"
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true;
     }
 }

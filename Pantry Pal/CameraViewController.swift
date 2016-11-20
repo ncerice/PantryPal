@@ -29,21 +29,27 @@ class CameraViewController: UIViewController {
             captureImageView.alpha = 1.0;
             captureImageView.contentMode = UIViewContentMode.ScaleAspectFit
             captureImageView.userInteractionEnabled = true
-            self.view.addSubview(captureImageView)
+            //self.view.addSubview(captureImageView)
+            
+            Retriever.getPantry(imageFilePath) { receipts in
+                // receipts is an array of scanned receipts
+            }
+            
             captureImageView.frame = self.view.bounds
         }
     }
+    
     @IBAction func flashTogglePressed(sender: AnyObject) {
         //247, 194, 40
         cameraViewController.enableTorch = !isFlashEnabled
         isFlashEnabled = !isFlashEnabled
         if isFlashEnabled {
             flashToggleButton.selected = true
-            flashToggleButton.setTitle("FLASH On", forState: UIControlState.Selected)
+            flashToggleButton.setTitle("Flash On", forState: UIControlState.Selected)
             flashToggleButton.setTitleColor(UIColor(red: 247/255, green: 194/255, blue: 40/255, alpha: 1.0), forState: UIControlState.Selected)
         } else {
             flashToggleButton.selected = false
-            flashToggleButton.setTitle("FLASH Off", forState: UIControlState.Normal)
+            flashToggleButton.setTitle("Flash Off", forState: UIControlState.Normal)
             flashToggleButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         }
     }
@@ -52,7 +58,7 @@ class CameraViewController: UIViewController {
         if sender.state == UIGestureRecognizerState.Recognized {
             let location = sender.locationInView(self.cameraViewController)
             focusIndicatorAnimateToPoint(location);
-            cameraViewController.focusAtPoint(location, completionHandler: { 
+            cameraViewController.focusAtPoint(location, completionHandler: {
                 self.focusIndicatorAnimateToPoint(location)
             })
             
@@ -65,10 +71,10 @@ class CameraViewController: UIViewController {
         focusIndicator.alpha = 0.0
         focusIndicator.hidden = false
         
-        UIView.animateWithDuration(0.4) { 
+        UIView.animateWithDuration(0.4) {
             self.focusIndicator.alpha = 1.0
         }
-        UIView.animateWithDuration(0.4) { 
+        UIView.animateWithDuration(0.4) {
             self.focusIndicator.alpha = 0.0
         }
     }
@@ -79,7 +85,7 @@ class CameraViewController: UIViewController {
         cameraViewController.enableBorderDetection = true
         cameraViewController.cameraViewType = IPDFCameraViewType.Normal
         updateTitleLabel()
-    
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -93,7 +99,7 @@ class CameraViewController: UIViewController {
     }
     
     func updateTitleLabel() {
-        titleLabel.text = "Place a receipt below"
+        titleLabel.text = "Place Receipt Below"
     }
     
     
