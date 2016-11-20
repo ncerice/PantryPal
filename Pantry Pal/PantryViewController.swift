@@ -17,6 +17,7 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+        //TODO: make Retriever function to get receipts based on token, without passing image
     }
     
     override func didReceiveMemoryWarning() {

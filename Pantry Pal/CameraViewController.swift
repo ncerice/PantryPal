@@ -31,8 +31,13 @@ class CameraViewController: UIViewController {
             captureImageView.userInteractionEnabled = true
             //self.view.addSubview(captureImageView)
             
+            //TODO: add popup with loading spinner while getting receipts
+            //TODO: Confirm or deny popup based on # of receipts
+            //TODO: use delegation to set scrollviewcontroller offset to self.view.frame.size.width
+            
             Retriever.getPantry(imageFilePath) { receipts in
                 // receipts is an array of scanned receipts
+                //TODO: Add received receipts to wherever we are storing them locally
             }
             
             captureImageView.frame = self.view.bounds
@@ -101,6 +106,7 @@ class CameraViewController: UIViewController {
     func updateTitleLabel() {
         titleLabel.text = "Place Receipt Below"
     }
+    
     
     
     /*
