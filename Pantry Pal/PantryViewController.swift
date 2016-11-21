@@ -18,12 +18,14 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         setupNotifications()
+        getReceipts()
         // Do any additional setup after loading the view.
         //TODO: make Retriever function to get receipts based on token, without passing image
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,28 +38,36 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func receiveReceiptData(notification: NSNotification) {
-//        if let receiptData = notification.userInfo?["data"] as? [Receipt] {
-//            currentReceipts = receiptData
-//            tableView.reloadData()
-//        }
-        //let newReceipts = notification.objectF
+        getReceipts()
+    }
+    
+    func getReceipts() {
+        Retriever.getPantry { (receipts) in
+            self.currentReceipts = receipts
+            self.tableView.reloadData()
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.currentReceipts[section].items.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4
+        return self.currentReceipts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Item")! as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Item")! as! PantryTableViewCell
+        let item = currentReceipts[indexPath.section].items[indexPath.row]
+        cell.itemNameLabel.text = item.name
+        cell.itemPriceLabel.text = item.price
         return cell
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Store name - Date"
+        let headerString = currentReceipts[section].store
+        let headerDate = currentReceipts[section].date
+        return headerString! + "                                                " + headerDate!
     }
     
     override func prefersStatusBarHidden() -> Bool {
