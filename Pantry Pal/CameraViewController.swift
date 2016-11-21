@@ -54,7 +54,8 @@ class CameraViewController: UIViewController {
         alert.view.tintColor = UIColor(red: 48/255, green: 205/255, blue: 154/255, alpha: 1.0)
         alert.addAction(UIAlertAction(title: "Confirm", style: .Default, handler: { (action: UIAlertAction!) in
             print("Confirm button pressed")
-            NSNotificationCenter.defaultCenter().postNotificationName("newData", object: receipts)
+            let dataDict:[String: Array<Receipt>] = ["data": receipts]
+            NSNotificationCenter.defaultCenter().postNotificationName("newReceiptData", object: nil, userInfo: dataDict)
         }))
         alert.addAction(UIAlertAction(title: "Retake", style: .Cancel, handler: { (action: UIAlertAction!) in
             print("Retake button pressed")

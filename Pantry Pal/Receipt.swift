@@ -23,7 +23,7 @@ struct Item {
     }
 }
 
-struct Receipt {
+class Receipt {
     var store : String? = nil
     var date : String? = nil
     var items = Array<Item>()

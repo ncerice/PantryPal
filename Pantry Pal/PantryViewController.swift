@@ -17,6 +17,7 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        setupNotifications()
         // Do any additional setup after loading the view.
         //TODO: make Retriever function to get receipts based on token, without passing image
     }
@@ -28,6 +29,18 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func setupNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.receiveReceiptData(_:)), name: "newReceiptData", object: nil)
+    }
+    
+    func receiveReceiptData(notification: NSNotification) {
+//        if let receiptData = notification.userInfo?["data"] as? [Receipt] {
+//            currentReceipts = receiptData
+//            tableView.reloadData()
+//        }
+        //let newReceipts = notification.objectF
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

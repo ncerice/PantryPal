@@ -60,7 +60,7 @@ class Retriever: NSObject {
             let boundary = generateBoundaryString()
             request.setValue("multipart/form-data; charset=utf8; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
             let image = UIImage(contentsOfFile: filepath)
-            let imageData = UIImageJPEGRepresentation(image!, 1.0)
+            let imageData = UIImageJPEGRepresentation(image!, 0.76)
             
             let fname = NSURL(fileURLWithPath: filepath).lastPathComponent!
             let mimetype = "image/jpeg"
