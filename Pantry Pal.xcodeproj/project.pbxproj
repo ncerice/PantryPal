@@ -13,6 +13,7 @@
 		D83E862B1DDB8745004672A6 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E862A1DDB8745004672A6 /* PantryViewController.swift */; };
 		D8589F831DCE8840005AD18B /* IPDFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8589F821DCE8840005AD18B /* IPDFCameraViewController.m */; };
 		D8AFB4371DCE8E30000F84CE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AFB4361DCE8E30000F84CE /* CameraViewController.swift */; };
+		D8D8E46C1DE27A0A00E08103 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E46B1DE27A0A00E08103 /* ProgressHUD.swift */; };
 		D8FF9B611DA3FA0400663BA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF9B601DA3FA0400663BA6 /* AppDelegate.swift */; };
 		D8FF9B681DA3FA0400663BA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8FF9B671DA3FA0400663BA6 /* Assets.xcassets */; };
 		D8FF9B6B1DA3FA0400663BA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8FF9B691DA3FA0400663BA6 /* LaunchScreen.storyboard */; };
@@ -42,6 +43,7 @@
 		D8589F811DCE8840005AD18B /* IPDFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPDFCameraViewController.h; sourceTree = "<group>"; };
 		D8589F821DCE8840005AD18B /* IPDFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPDFCameraViewController.m; sourceTree = "<group>"; };
 		D8AFB4361DCE8E30000F84CE /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		D8D8E46B1DE27A0A00E08103 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		D8FF9B5D1DA3FA0400663BA6 /* Pantry Pal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pantry Pal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FF9B601DA3FA0400663BA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8FF9B671DA3FA0400663BA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				D8589F801DCE883F005AD18B /* Pantry Pal-Bridging-Header.h */,
 				030407E91DE14335009038AF /* Retriever.swift */,
 				030407EB1DE14347009038AF /* Receipt.swift */,
+				D8D8E46B1DE27A0A00E08103 /* ProgressHUD.swift */,
 			);
 			path = "Pantry Pal";
 			sourceTree = "<group>";
@@ -132,7 +135,7 @@
 				TargetAttributes = {
 					D8FF9B5C1DA3FA0400663BA6 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = PMMBM2HP94;
+						DevelopmentTeam = Z9M2F36B5A;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -176,6 +179,7 @@
 			files = (
 				D8589F831DCE8840005AD18B /* IPDFCameraViewController.m in Sources */,
 				030407E81DE14317009038AF /* ScrollViewController.swift in Sources */,
+				D8D8E46C1DE27A0A00E08103 /* ProgressHUD.swift in Sources */,
 				D8FF9B611DA3FA0400663BA6 /* AppDelegate.swift in Sources */,
 				D8FF9B751DA3FA4800663BA6 /* MenuViewController.swift in Sources */,
 				030407EC1DE14347009038AF /* Receipt.swift in Sources */,
@@ -298,7 +302,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = PMMBM2HP94;
+				DEVELOPMENT_TEAM = Z9M2F36B5A;
 				INFOPLIST_FILE = "Pantry Pal/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bama.Pantry-Pal";
@@ -317,7 +321,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = PMMBM2HP94;
+				DEVELOPMENT_TEAM = Z9M2F36B5A;
 				INFOPLIST_FILE = "Pantry Pal/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bama.Pantry-Pal";

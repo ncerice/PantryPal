@@ -11,6 +11,7 @@ import UIKit
 class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    var currentReceipts = [Receipt]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,10 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         // Do any additional setup after loading the view.
         //TODO: make Retriever function to get receipts based on token, without passing image
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,6 +48,6 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prefersStatusBarHidden() -> Bool {
-        return true;
+        return false;
     }
 }

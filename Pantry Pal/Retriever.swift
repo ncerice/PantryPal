@@ -26,7 +26,29 @@ class Retriever: NSObject {
         }
     }
     
-    class func getPantry(filepath : String, next: (Array<Receipt>) -> ()) {
+    class func removeLastReceipt() {
+        let prefs = NSUserDefaults.standardUserDefaults()
+        if let token = prefs.stringForKey("token") {
+            let pantryURL = NSURL(string: url + "apishift?token=" + token)
+            let request = NSMutableURLRequest(URL: pantryURL!)
+            request.HTTPMethod = "GET"
+            runRequst(request) { data in }
+        }
+    }
+    
+    class func getPantry(next: (Array<Receipt>) -> ()) {
+        let prefs = NSUserDefaults.standardUserDefaults()
+        if let token = prefs.stringForKey("token") {
+            let pantryURL = NSURL(string: url + "pantry?token=" + token)
+            let request = NSMutableURLRequest(URL: pantryURL!)
+            request.HTTPMethod = "GET"
+            runRequst(request) { data in
+                next(generateReceipts(data))
+            }
+        }
+    }
+    
+    class func getReceipt(filepath : String, next: (Array<Receipt>) -> ()) {
         let prefs = NSUserDefaults.standardUserDefaults()
         print(filepath)
         
@@ -38,7 +60,7 @@ class Retriever: NSObject {
             let boundary = generateBoundaryString()
             request.setValue("multipart/form-data; charset=utf8; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
             let image = UIImage(contentsOfFile: filepath)
-            let imageData = UIImageJPEGRepresentation(image!, 0.76)
+            let imageData = UIImageJPEGRepresentation(image!, 1.0)
             
             let fname = NSURL(fileURLWithPath: filepath).lastPathComponent!
             let mimetype = "image/jpeg"

@@ -69,7 +69,7 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func prefersStatusBarHidden() -> Bool {
-        return true;
+        return false;
     }
     
     
