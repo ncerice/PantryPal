@@ -97,6 +97,10 @@ class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDat
         return img
     }
     
+    func verticalOffsetForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
+        return -30.0
+    }
+    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         self.searchBar.endEditing(true)
     }
