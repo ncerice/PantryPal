@@ -70,11 +70,13 @@ class CameraViewController: UIViewController {
         if isFlashEnabled {
             flashToggleButton.selected = true
             flashToggleButton.setTitle("Flash On", forState: UIControlState.Selected)
-            flashToggleButton.setTitleColor(UIColor(red: 247/255, green: 194/255, blue: 40/255, alpha: 1.0), forState: UIControlState.Selected)
+            flashToggleButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Selected)
+            flashToggleButton.backgroundColor = UIColor(red: 48/255, green: 205/255, blue: 154/255, alpha: 1.0)
         } else {
             flashToggleButton.selected = false
             flashToggleButton.setTitle("Flash Off", forState: UIControlState.Normal)
             flashToggleButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            flashToggleButton.backgroundColor = UIColor.clearColor()
         }
     }
     
