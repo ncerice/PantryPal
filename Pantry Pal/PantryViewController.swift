@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
-class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var currentReceipts = [Receipt]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
         setupNotifications()
         getReceipts()
         // Do any additional setup after loading the view.
@@ -70,6 +72,21 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let headerString = currentReceipts[section].store
         let headerDate = currentReceipts[section].date
         return headerString! + "                                                " + headerDate!
+    }
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Welcome"
+        return NSAttributedString(string: str)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Swipe to the left to scan your first receipt!"
+        return NSAttributedString(string: str)
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        let img = UIImage(CIImage: CIImage(image: UIImage(named: "ShoppingCartIconEmptyData")!)!, scale: 5.0, orientation: UIImageOrientation.Down)
+        return img
     }
     
     override func prefersStatusBarHidden() -> Bool {

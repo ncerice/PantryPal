@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		022C9E1FCA23B42A05823665 /* Pods_Pantry_Pal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D128E7D3F8567DECD0B6B994 /* Pods_Pantry_Pal.framework */; };
 		030407E81DE14317009038AF /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030407E71DE14317009038AF /* ScrollViewController.swift */; };
 		030407EA1DE14335009038AF /* Retriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030407E91DE14335009038AF /* Retriever.swift */; };
 		030407EC1DE14347009038AF /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030407EB1DE14347009038AF /* Receipt.swift */; };
@@ -39,6 +40,9 @@
 		030407E71DE14317009038AF /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		030407E91DE14335009038AF /* Retriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Retriever.swift; sourceTree = "<group>"; };
 		030407EB1DE14347009038AF /* Receipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
+		5DA35ECCC27C328086AB46F9 /* Pods-Pantry Pal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pantry Pal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pantry Pal/Pods-Pantry Pal.release.xcconfig"; sourceTree = "<group>"; };
+		7B5100CEEC35B77119F9C361 /* Pods-Pantry Pal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pantry Pal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pantry Pal/Pods-Pantry Pal.debug.xcconfig"; sourceTree = "<group>"; };
+		D128E7D3F8567DECD0B6B994 /* Pods_Pantry_Pal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pantry_Pal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83E862A1DDB8745004672A6 /* PantryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
 		D8589F801DCE883F005AD18B /* Pantry Pal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pantry Pal-Bridging-Header.h"; sourceTree = "<group>"; };
 		D8589F811DCE8840005AD18B /* IPDFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPDFCameraViewController.h; sourceTree = "<group>"; };
@@ -60,17 +64,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				022C9E1FCA23B42A05823665 /* Pods_Pantry_Pal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36249707791132C5F5E356EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D128E7D3F8567DECD0B6B994 /* Pods_Pantry_Pal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1223088E9AB732FBD47649F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B5100CEEC35B77119F9C361 /* Pods-Pantry Pal.debug.xcconfig */,
+				5DA35ECCC27C328086AB46F9 /* Pods-Pantry Pal.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D8FF9B541DA3FA0400663BA6 = {
 			isa = PBXGroup;
 			children = (
 				D8FF9B5F1DA3FA0400663BA6 /* Pantry Pal */,
 				D8FF9B5E1DA3FA0400663BA6 /* Products */,
+				B1223088E9AB732FBD47649F /* Pods */,
+				36249707791132C5F5E356EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,10 +136,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8FF9B6F1DA3FA0400663BA6 /* Build configuration list for PBXNativeTarget "Pantry Pal" */;
 			buildPhases = (
+				481680DC24A2874836BAA7E1 /* [CP] Check Pods Manifest.lock */,
 				D8FF9B591DA3FA0400663BA6 /* Sources */,
 				D8FF9B5A1DA3FA0400663BA6 /* Frameworks */,
 				D8FF9B5B1DA3FA0400663BA6 /* Resources */,
 				D833D1C41DCFF6B400AD814B /* Embed Frameworks */,
+				FFBC12D472DB595695491B8F /* [CP] Embed Pods Frameworks */,
+				7DF03E3CE79B45B6AB866654 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,6 +201,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		481680DC24A2874836BAA7E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7DF03E3CE79B45B6AB866654 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pantry Pal/Pods-Pantry Pal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFBC12D472DB595695491B8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pantry Pal/Pods-Pantry Pal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8FF9B591DA3FA0400663BA6 /* Sources */ = {
@@ -301,12 +376,15 @@
 		};
 		D8FF9B701DA3FA0400663BA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B5100CEEC35B77119F9C361 /* Pods-Pantry Pal.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z9M2F36B5A;
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}\"/**";
 				INFOPLIST_FILE = "Pantry Pal/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bama.Pantry-Pal";
@@ -320,12 +398,15 @@
 		};
 		D8FF9B711DA3FA0400663BA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DA35ECCC27C328086AB46F9 /* Pods-Pantry Pal.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z9M2F36B5A;
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}\"/**";
 				INFOPLIST_FILE = "Pantry Pal/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bama.Pantry-Pal";

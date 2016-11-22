@@ -21,11 +21,13 @@ class CameraViewController: UIViewController {
     
     @IBOutlet weak var flashToggleButton: UIButton!
     
+    @IBOutlet weak var captureButton: UIButton!
     
     private var isFlashEnabled = false
     
     @IBAction func captureButtonPressed(sender: AnyObject) {
         cameraViewController.captureImageWithCompletionHander { (imageFilePath) in
+            self.disableCaptureButton()
             let activityView = ProgressHUD(text: "Processing")
             activityView.show()
             activityView.center = self.view.center
@@ -47,11 +49,15 @@ class CameraViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Confirm", style: .Default, handler: { (action: UIAlertAction!) in
             print("Confirm button pressed")
             NSNotificationCenter.defaultCenter().postNotificationName("newReceiptData", object: nil)
+            self.enableCaptureButton()
             activityView.removeFromSuperview()
         }))
         alert.addAction(UIAlertAction(title: "Retake", style: .Cancel, handler: { (action: UIAlertAction!) in
             print("Retake button pressed")
-            Retriever.removeLastReceipt()
+            if receipts[0].items.count != 0 {
+                Retriever.removeLastReceipt()
+            }
+            self.enableCaptureButton()
             activityView.removeFromSuperview()
         }))
         presentViewController(alert, animated: true, completion: nil)
@@ -95,6 +101,20 @@ class CameraViewController: UIViewController {
         UIView.animateWithDuration(0.4) {
             self.focusIndicator.alpha = 0.0
         }
+    }
+    
+    private func disableCaptureButton() {
+        captureButton.userInteractionEnabled = false
+        let origImage = UIImage(named: "capture_button");
+        let tintedImage = origImage?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        captureButton.setImage(tintedImage, forState: .Normal)
+        captureButton.tintColor = UIColor.grayColor()
+    }
+    
+    private func enableCaptureButton() {
+        captureButton.userInteractionEnabled = true
+        captureButton.setImage(UIImage(named: "capture_button"), forState: .Normal)
+        captureButton.tintColor = UIColor.clearColor()
     }
     
     override func viewDidLoad() {

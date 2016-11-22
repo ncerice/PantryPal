@@ -20,10 +20,9 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
         let prefs = NSUserDefaults.standardUserDefaults()
         
         if prefs.stringForKey("token") == nil {
-            setToken();
+            setToken()
         }
-        
-        initViews();
+        initViews()
         // Do any additional setup after loading the view.
     }
     
@@ -71,7 +70,6 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
     override func prefersStatusBarHidden() -> Bool {
         return false;
     }
-    
     
     /*
      // MARK: - Navigation
