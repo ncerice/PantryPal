@@ -44,7 +44,9 @@ class PantryViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func getReceipts() {
         Retriever.getPantry { (receipts) in
             self.currentReceipts = receipts
-            self.tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+            })
         }
     }
     

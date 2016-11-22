@@ -29,7 +29,7 @@ class Retriever: NSObject {
     class func removeLastReceipt() {
         let prefs = NSUserDefaults.standardUserDefaults()
         if let token = prefs.stringForKey("token") {
-            let pantryURL = NSURL(string: url + "apishift?token=" + token)
+            let pantryURL = NSURL(string: url + "shift?token=" + token)
             let request = NSMutableURLRequest(URL: pantryURL!)
             request.HTTPMethod = "GET"
             runRequst(request) { data in }

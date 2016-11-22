@@ -26,39 +26,33 @@ class CameraViewController: UIViewController {
     
     @IBAction func captureButtonPressed(sender: AnyObject) {
         cameraViewController.captureImageWithCompletionHander { (imageFilePath) in
-            let captureImageView = UIImageView(image: UIImage(contentsOfFile: imageFilePath))
-            captureImageView.backgroundColor = UIColor(white: 0.0, alpha: 0.7)
-            captureImageView.frame = CGRectOffset(self.view.bounds, 0, -self.view.bounds.size.height)
-            captureImageView.alpha = 1.0;
-            captureImageView.contentMode = UIViewContentMode.ScaleAspectFit
-            captureImageView.userInteractionEnabled = true
-            //self.view.addSubview(captureImageView)
+            let activityView = ProgressHUD(text: "Processing")
+            activityView.show()
+            activityView.center = self.view.center
+            self.view.addSubview(activityView)
             
             //TODO: use delegation to set scrollviewcontroller offset to self.view.frame.size.width
         
             Retriever.getReceipt(imageFilePath) { receipts in
                 // receipts is an array of scanned receipts
-                //TODO: add popup with loading spinner while getting receipts
-                //TODO: Confirm or deny popup based on # of receipts
-                //TODO: Add received receipts to pantryViewController's receipt array
                 print(receipts)
-                self.displayConfirmationPopup(receipts)
+                self.displayConfirmationPopup(receipts, activityView: activityView)
             }
-            
-            captureImageView.frame = self.view.bounds
         }
     }
-    private func displayConfirmationPopup(receipts: [Receipt]) {
+    private func displayConfirmationPopup(receipts: [Receipt], activityView: ProgressHUD) {
         let alertMessage = "We recognized \(receipts[0].items.count) items on the receipt. Is this correct?"
         let alert = UIAlertController(title: "Confirm", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
         alert.view.tintColor = UIColor(red: 48/255, green: 205/255, blue: 154/255, alpha: 1.0)
         alert.addAction(UIAlertAction(title: "Confirm", style: .Default, handler: { (action: UIAlertAction!) in
-            //print("Confirm button pressed")
-            //let dataDict:[String: Array<Receipt>] = ["data": receipts]
+            print("Confirm button pressed")
             NSNotificationCenter.defaultCenter().postNotificationName("newReceiptData", object: nil)
+            activityView.removeFromSuperview()
         }))
         alert.addAction(UIAlertAction(title: "Retake", style: .Cancel, handler: { (action: UIAlertAction!) in
             print("Retake button pressed")
+            Retriever.removeLastReceipt()
+            activityView.removeFromSuperview()
         }))
         presentViewController(alert, animated: true, completion: nil)
     }
