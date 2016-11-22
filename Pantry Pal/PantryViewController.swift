@@ -9,16 +9,24 @@
 import UIKit
 import DZNEmptyDataSet
 
-class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var currentReceipts = [Receipt]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
+        searchBar.delegate = self
         tableView.tableFooterView = UIView()
+        searchBar.returnKeyType = UIReturnKeyType.Done
+        let tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        self.view.addGestureRecognizer(tap)
         setupNotifications()
         getReceipts()
         // Do any additional setup after loading the view.
@@ -87,6 +95,14 @@ class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDat
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
         let img = UIImage(CIImage: CIImage(image: UIImage(named: "ShoppingCartIconEmptyData")!)!, scale: 5.0, orientation: UIImageOrientation.Down)
         return img
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+    }
+    
+    func dismissKeyboard() {
+        self.searchBar.endEditing(true)
     }
     
     override func prefersStatusBarHidden() -> Bool {
