@@ -29,7 +29,7 @@ class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDat
         searchBar.returnKeyType = UIReturnKeyType.Done
         let tap = UITapGestureRecognizer(target: self, action: #selector(PantryViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
-        setupNotifications()
+        self.setupNotifications()
         getReceipts()
         // Do any additional setup after loading the view.
         //TODO: make Retriever function to get receipts based on token, without passing image

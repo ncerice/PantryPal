@@ -22,6 +22,7 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
         if prefs.stringForKey("token") == nil {
             setToken()
         }
+        self.setupNotifications()
         initViews()
         // Do any additional setup after loading the view.
     }
@@ -59,6 +60,18 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
                 let prefs = NSUserDefaults.standardUserDefaults()
                 prefs.setValue(token, forKey: "token")
             }
+        }
+    }
+    
+    private func setupNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.scrollToPantry(_:)), name: "scrollToPantry", object: nil)
+    }
+    
+    func scrollToPantry(notification: NSNotification) {
+        dispatch_async(dispatch_get_main_queue()) {
+            UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+                self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width, y: 0)
+                }, completion: nil)
         }
     }
     

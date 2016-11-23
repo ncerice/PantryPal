@@ -49,6 +49,7 @@ class CameraViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Confirm", style: .Default, handler: { (action: UIAlertAction!) in
             print("Confirm button pressed")
             NSNotificationCenter.defaultCenter().postNotificationName("newReceiptData", object: nil)
+            NSNotificationCenter.defaultCenter().postNotificationName("scrollToPantry", object: nil)
             self.enableCaptureButton()
             activityView.removeFromSuperview()
         }))
