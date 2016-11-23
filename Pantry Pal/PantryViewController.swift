@@ -9,7 +9,7 @@
 import UIKit
 import DZNEmptyDataSet
 
-class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, UISearchBarDelegate {
+class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,10 +22,12 @@ class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDat
         super.viewDidLoad()
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
         searchBar.delegate = self
         tableView.tableFooterView = UIView()
         searchBar.returnKeyType = UIReturnKeyType.Done
-        let tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(PantryViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
         setupNotifications()
         getReceipts()
@@ -35,7 +37,7 @@ class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDat
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.tableView.reloadData()
+        getReceipts()
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,7 +57,11 @@ class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDat
         Retriever.getPantry { (receipts) in
             self.currentReceipts = receipts
             dispatch_async(dispatch_get_main_queue(), {
-                self.tableView.reloadData()
+                //self.tableView.reloadData()
+                UIView.transitionWithView(self.tableView, duration: 0.35, options: .TransitionCrossDissolve, animations:
+                    {() -> Void in
+                        self.tableView.reloadData()
+                    }, completion: nil);
             })
         }
     }
@@ -76,10 +82,16 @@ class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDat
         return cell
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let headerString = currentReceipts[section].store
-        let headerDate = currentReceipts[section].date
-        return headerString! + "                                                " + headerDate!
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = tableView.dequeueReusableCellWithIdentifier("CustomHeader") as! CustomHeaderCell
+        headerCell.storeDateLabel.text = currentReceipts[section].date
+        headerCell.storeNameLabel.text = currentReceipts[section].store
+        //headerCell.backgroundColor = UIColor(red: 201/255, green: 201/255, blue: 206/255, alpha: 0.5)
+        return headerCell
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 58.0
     }
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {

@@ -13,6 +13,7 @@
 		030407EC1DE14347009038AF /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030407EB1DE14347009038AF /* Receipt.swift */; };
 		D83E862B1DDB8745004672A6 /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83E862A1DDB8745004672A6 /* PantryViewController.swift */; };
 		D8589F831DCE8840005AD18B /* IPDFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8589F821DCE8840005AD18B /* IPDFCameraViewController.m */; };
+		D8A7BA901DE556550071A503 /* CustomHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7BA8F1DE556550071A503 /* CustomHeaderCell.swift */; };
 		D8AFB4371DCE8E30000F84CE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AFB4361DCE8E30000F84CE /* CameraViewController.swift */; };
 		D8D8E46C1DE27A0A00E08103 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E46B1DE27A0A00E08103 /* ProgressHUD.swift */; };
 		D8D8E46E1DE2A3E100E08103 /* PantryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8E46D1DE2A3E100E08103 /* PantryTableViewCell.swift */; };
@@ -47,6 +48,7 @@
 		D8589F801DCE883F005AD18B /* Pantry Pal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pantry Pal-Bridging-Header.h"; sourceTree = "<group>"; };
 		D8589F811DCE8840005AD18B /* IPDFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPDFCameraViewController.h; sourceTree = "<group>"; };
 		D8589F821DCE8840005AD18B /* IPDFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPDFCameraViewController.m; sourceTree = "<group>"; };
+		D8A7BA8F1DE556550071A503 /* CustomHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderCell.swift; sourceTree = "<group>"; };
 		D8AFB4361DCE8E30000F84CE /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D8D8E46B1DE27A0A00E08103 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		D8D8E46D1DE2A3E100E08103 /* PantryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryTableViewCell.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				030407EB1DE14347009038AF /* Receipt.swift */,
 				D8D8E46B1DE27A0A00E08103 /* ProgressHUD.swift */,
 				D8D8E46D1DE2A3E100E08103 /* PantryTableViewCell.swift */,
+				D8A7BA8F1DE556550071A503 /* CustomHeaderCell.swift */,
 			);
 			path = "Pantry Pal";
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A7BA901DE556550071A503 /* CustomHeaderCell.swift in Sources */,
 				D8589F831DCE8840005AD18B /* IPDFCameraViewController.m in Sources */,
 				030407E81DE14317009038AF /* ScrollViewController.swift in Sources */,
 				D8D8E46C1DE27A0A00E08103 /* ProgressHUD.swift in Sources */,
