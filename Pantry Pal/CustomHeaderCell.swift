@@ -10,18 +10,13 @@ import UIKit
 
 class CustomHeaderCell: UITableViewCell {
 
-    
     @IBOutlet weak var removeButton: UIButton!
-    
     @IBOutlet weak var storeDateLabel: UILabel!
-    
-    
     @IBOutlet weak var storeNameLabel: UILabel!
     
     @IBAction func deleteButtonPressed(sender: AnyObject) {
         print("SECTION DELETE PRESSED")
     }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,8 +25,6 @@ class CustomHeaderCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-
 }

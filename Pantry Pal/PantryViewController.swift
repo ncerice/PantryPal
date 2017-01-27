@@ -12,8 +12,6 @@ import DZNEmptyDataSet
 class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    
     @IBOutlet weak var searchBar: UISearchBar!
     
     var currentReceipts = [Receipt]()
@@ -100,7 +98,7 @@ class PantryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDat
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "Swipe to the left to scan your first receipt!"
+        let str = "Swipe to the camera screen to scan your first receipt!"
         return NSAttributedString(string: str)
     }
     

@@ -9,6 +9,7 @@
 import UIKit
 
 struct Item {
+    
     var name : String? = nil
     var price : String? = nil
     
@@ -24,6 +25,7 @@ struct Item {
 }
 
 class Receipt {
+    
     var store : String? = nil
     var date : String? = nil
     var items = Array<Item>()

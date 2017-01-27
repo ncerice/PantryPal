@@ -1,11 +1,6 @@
 ////
 ////  ProgressHUD.swift
 ////  Pantry Pal
-////
-////  Created by Nathan Cerice on 11/20/16.
-////  Copyright © 2016 407. All rights reserved.
-////
-
 import UIKit
 
 class ProgressHUD: UIVisualEffectView {

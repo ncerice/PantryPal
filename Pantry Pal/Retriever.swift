@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 
 class Retriever: NSObject {
+    
     static let url = "https://pantrypal.burgin.io/api/"
     
     class func getToken(next: (String?) -> ()) {
@@ -119,5 +120,4 @@ class Retriever: NSObject {
         
         task.resume()
     }
-    
 }

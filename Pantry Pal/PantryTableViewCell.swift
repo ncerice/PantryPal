@@ -9,10 +9,8 @@
 import UIKit
 
 class PantryTableViewCell: UITableViewCell {
-
     
     @IBOutlet weak var itemNameLabel: UILabel!
-    
     @IBOutlet weak var itemPriceLabel: UILabel!
     
     override func awakeFromNib() {
@@ -22,7 +20,5 @@ class PantryTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
-
 }

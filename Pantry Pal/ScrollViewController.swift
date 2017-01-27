@@ -11,7 +11,6 @@ import UIKit
 class ScrollViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var pageOverlay: UIView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
@@ -83,15 +82,4 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
     override func prefersStatusBarHidden() -> Bool {
         return false;
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

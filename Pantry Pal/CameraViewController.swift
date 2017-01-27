@@ -11,16 +11,11 @@ import AVFoundation
 
 class CameraViewController: UIViewController {
     
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var cameraViewController: IPDFCameraViewController!
-    
     @IBOutlet weak var focusIndicator: UIImageView!
-    
     @IBOutlet weak var flashToggleButton: UIButton!
-    
     @IBOutlet weak var captureButton: UIButton!
     
     private var isFlashEnabled = false
@@ -42,6 +37,7 @@ class CameraViewController: UIViewController {
             }
         }
     }
+    
     private func displayConfirmationPopup(receipts: [Receipt], activityView: ProgressHUD) {
         let alertMessage = "We recognized \(receipts[0].items.count) items on the receipt. Is this correct?"
         let alert = UIAlertController(title: "Confirm", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
@@ -146,16 +142,4 @@ class CameraViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

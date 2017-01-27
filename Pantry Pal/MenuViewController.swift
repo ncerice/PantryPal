@@ -16,7 +16,4 @@ class MenuViewController: UIViewController {
         self.navigationItem.title = "Pantry Pal"
         self.navigationController!.navigationBar.tintColor = UIColor.blackColor()
     }
-
-
 }
-
